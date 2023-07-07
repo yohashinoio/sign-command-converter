@@ -28,9 +28,9 @@ export class SignCommandConverter20 {
       return cmd;
     }
 
-    const nbt = sub.substring(b.start, b.end + 1);
+    const snbt = sub.substring(b.start, b.end + 1);
 
-    return cmd.replace(nbt, this.convert_nbt(nbt));
+    return cmd.replace(snbt, this.convert_nbt(snbt));
   }
 
   convert_sign_nbt(cmd: string): string {
@@ -39,9 +39,9 @@ export class SignCommandConverter20 {
       return cmd;
     }
 
-    const nbt = cmd.substring(b.start, b.end + 1);
+    const snbt = cmd.substring(b.start, b.end + 1);
 
-    return cmd.replace(nbt, this.convert_nbt(nbt));
+    return cmd.replace(snbt, this.convert_nbt(snbt));
   }
 
   convert_nbt(snbt: string): string {

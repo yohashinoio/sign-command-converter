@@ -17,7 +17,7 @@ import React from "react";
 
 export default function Home() {
   const [is_write_front, setIsWriteFront] = React.useState(true);
-  const [is_write_back, setIsWriteBack] = React.useState(true);
+  const [is_write_back, setIsWriteBack] = React.useState(false);
   const [is_waxed, setIsWaxed] = React.useState(false);
 
   let [input, setInput] = React.useState("");
@@ -55,7 +55,6 @@ export default function Home() {
               </Checkbox>
               <Checkbox
                 colorScheme={"green"}
-                defaultChecked
                 onChange={(e) => setIsWriteBack(e.target.checked)}
               >
                 Back
