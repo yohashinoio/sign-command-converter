@@ -1,16 +1,16 @@
 import balanced from "balanced-match";
 import { Byte, TagObject, parse, stringify } from "nbt-ts";
 
-export interface SignCommandConverterOption {
+export interface SignCommandConvertOptions {
   front_text: boolean;
   back_text: boolean;
   is_waxed: boolean;
 }
 
 export class SignCommandConverter20 {
-  option: SignCommandConverterOption;
+  option: SignCommandConvertOptions;
 
-  constructor(option: SignCommandConverterOption) {
+  constructor(option: SignCommandConvertOptions) {
     this.option = option;
   }
 

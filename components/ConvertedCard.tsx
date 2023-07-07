@@ -7,6 +7,7 @@ import {
   IconButton,
   Text,
   useToast,
+  CardHeader,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -40,10 +41,7 @@ export const ConvertedCard: React.FC<Props> = (props) => {
 
   return (
     <Card>
-      <CardBody>
-        <Text>{props.converted}</Text>
-      </CardBody>
-      <CardFooter>
+      <CardHeader pb={"10px"}>
         <ButtonGroup>
           <IconButton
             onClick={onClickCopy}
@@ -56,7 +54,10 @@ export const ConvertedCard: React.FC<Props> = (props) => {
             icon={<DeleteIcon />}
           />
         </ButtonGroup>
-      </CardFooter>
+      </CardHeader>
+      <CardBody pt={"10px"}>
+        <Text>{props.converted}</Text>
+      </CardBody>
     </Card>
   );
 };

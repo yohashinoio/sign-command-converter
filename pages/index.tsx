@@ -1,11 +1,10 @@
 import { ConvertedCard } from "@/components/ConvertedCard";
 import { SignCommandConverter20 } from "@/utils/convert";
-import { ArrowForwardIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import {
   Button,
   Center,
   Checkbox,
-  CheckboxGroup,
   Flex,
   Spacer,
   Stack,
@@ -84,6 +83,7 @@ export default function Home() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={"Here is a command you want to convert"}
+            minBlockSize={"3xs"}
           />
 
           <Button onClick={onClickConvert}>Convert</Button>
