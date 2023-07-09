@@ -8,7 +8,7 @@ export interface SignCommandConvertOptions {
 }
 
 export class SignCommandConverter20 {
-  option: SignCommandConvertOptions;
+  private readonly option: SignCommandConvertOptions;
 
   constructor(option: SignCommandConvertOptions) {
     this.option = option;
@@ -18,7 +18,7 @@ export class SignCommandConverter20 {
     return this.convert_sign_nbt(this.convert_block_entity_tag_nbt(command));
   }
 
-  convert_block_entity_tag_nbt(cmd: string): string {
+  private convert_block_entity_tag_nbt(cmd: string): string {
     const idx = cmd.indexOf("BlockEntityTag");
     if (idx === -1) return cmd;
 
@@ -33,7 +33,7 @@ export class SignCommandConverter20 {
     return cmd.replace(snbt, this.convert_nbt(snbt));
   }
 
-  convert_sign_nbt(cmd: string): string {
+  private convert_sign_nbt(cmd: string): string {
     const b = balanced("{", "}", cmd);
     if (!b) {
       return cmd;
@@ -44,7 +44,7 @@ export class SignCommandConverter20 {
     return cmd.replace(snbt, this.convert_nbt(snbt));
   }
 
-  convert_nbt(snbt: string): string {
+  private convert_nbt(snbt: string): string {
     const nbt = parse(snbt) as TagObject;
 
     if (!nbt) {
