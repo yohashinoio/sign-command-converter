@@ -1,6 +1,10 @@
 import balanced from "balanced-match";
 import { Byte, TagObject, parse, stringify } from "nbt-ts";
 
+function remove_indentation(s: string): string {
+  return s.replaceAll(/\n\s+/g, "");
+}
+
 export interface SignCommandConvertOptions {
   front_text: boolean;
   back_text: boolean;
@@ -15,7 +19,9 @@ export class SignCommandConverter20 {
   }
 
   convert(command: string): string {
-    return this.convert_sign_nbt(this.convert_block_entity_tag_nbt(command));
+    return remove_indentation(
+      this.convert_sign_nbt(this.convert_block_entity_tag_nbt(command))
+    );
   }
 
   private convert_block_entity_tag_nbt(cmd: string): string {

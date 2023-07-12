@@ -14,10 +14,6 @@ import {
 import Head from "next/head";
 import React from "react";
 
-function delete_indent(s: string): string {
-  return s.replaceAll(/\n\s+/g, "");
-}
-
 export default function Home() {
   const [is_write_front, setIsWriteFront] = React.useState(true);
   const [is_write_back, setIsWriteBack] = React.useState(false);
@@ -33,7 +29,7 @@ export default function Home() {
       is_waxed: is_waxed,
     });
 
-    setConverted(delete_indent(converter.convert(input)));
+    setConverted(converter.convert(input));
   };
 
   return (
